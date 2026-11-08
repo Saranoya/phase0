@@ -15,18 +15,25 @@ function calculateTotal(items) {
     return items.reduce((total, item) => total + item.price, 0);
 }
 
-function lines(items) {
+function printLines(items) {
     const receiptLines = items.map((item) => `${item.name}: $${item.price.toFixed(2)}`);
     receiptLines.forEach(line => {
         console.log(line);
     });
 }
 
+function findItem(items, name) {
+   return items.find((item) => item.name === name);
+}
+
 function printReceipt(items) {
     console.log("Receipt:");
-    lines(items);
+    printLines(items);
     console.log("Pricey items:");
-    lines(items.filter((item) => item.price > 3));
+    printLines(items.filter((item) => item.price > 3));
+    console.log("Price of fries:");
+    const foundItem = findItem(items, "Fries");
+    console.log(`${foundItem.name}: $${foundItem.price.toFixed(2)}`);
 }
 
 const items = [
