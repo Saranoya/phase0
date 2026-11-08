@@ -13,11 +13,7 @@ function calculateSplit(bill, percent, numPeople) {
 }
 
 function calculateTotal(items) {
-    let total = 0;
-    items.forEach((item) => {
-        total += item.price;
-    });
-    return total;
+    return items.reduce((total, item) => total + item.price, 0);
 }
 
 const items = [
