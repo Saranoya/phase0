@@ -69,7 +69,7 @@ console.log(students.filter((student) => student.group === "A"));
 // Then try "Zoë". What do you get, and why?
 
 console.log(students.find((student) => student.name === "Daan"));
-// console.logconsole.log(students.find((student) => student.name === "Zoë")); 
+// console.log(students.find((student) => student.name === "Zoë")); 
 // Will return undefined, since there is no Zoë?
 
 // 9. reduce: the total of all scores.
